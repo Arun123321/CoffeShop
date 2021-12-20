@@ -32,7 +32,7 @@ CoffeShop is a web application developed using Laravel + React JS
 
 7.Run  **php artisan db:seed --class=UserSeeder**
 
-8. Open file in /resources/js/App.js   & modify line with  **<Router basename="/CoShop">** Change 'CoShop' to your laravel root folder name (project folder)
+8. Open file in /resources/js/App.js   & modify line with  <b><Router basename="/CoShop"></b> Change 'CoShop' to your laravel root folder name (project folder)
     
     
              ** Done**
