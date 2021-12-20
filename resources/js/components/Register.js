@@ -21,7 +21,7 @@ const data = { email: email,password:password,name:name };
     sessionStorage.setItem('isAdmin',response.data.user.is_admin);
     sessionStorage.setItem('user',response.data.user.name);
     setError('');
-    history("/CoShop/dashboard"); 
+    history("/"); 
 
         }).catch((error) => {
        

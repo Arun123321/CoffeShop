@@ -66,7 +66,7 @@ progress: undefined,
         </Button>
         <Modal isOpen={modalOpen}
           >
-          <ModalHeader>Add new User</ModalHeader>
+          <ModalHeader>Add new product</ModalHeader>
           <ModalBody>
             <FormGroup >
               <Label for="name">Name</Label>

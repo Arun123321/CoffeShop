@@ -5587,7 +5587,7 @@ var AddProduct = function AddProduct(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_5__.Modal, {
       isOpen: modalOpen,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_5__.ModalHeader, {
-        children: "Add new User"
+        children: "Add new product"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_5__.ModalBody, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_5__.FormGroup, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(reactstrap__WEBPACK_IMPORTED_MODULE_5__.Label, {
@@ -6150,15 +6150,15 @@ function AdminDashboard() {
             className: "mt-5 text-center ",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Link, {
               className: "btn btn-primary mx-2",
-              to: "/CoShop/admin-users",
+              to: "/admin-users",
               children: "Manage Users"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Link, {
               className: "btn btn-primary",
-              to: "/CoShop/admin-products",
+              to: "/admin-products",
               children: "Manage Products"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Link, {
               className: "btn btn-primary mx-2",
-              to: "/CoShop/admin-orders",
+              to: "/admin-orders",
               children: "Manage Orders"
             })]
           })]
@@ -8541,7 +8541,7 @@ function Register() {
       sessionStorage.setItem('isAdmin', response.data.user.is_admin);
       sessionStorage.setItem('user', response.data.user.name);
       setError('');
-      history("/CoShop/dashboard");
+      history("/");
     })["catch"](function (error) {
       setError('Email already used/Password doesnt match with the minimum length of 4');
     });

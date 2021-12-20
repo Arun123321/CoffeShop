@@ -111,16 +111,7 @@ else
      */
     public function destroy(Request $request)
     {
-        $user = Auth::guard('api')->user();
-
-if($user->is_admin!=1)
-{
-      return response()->json([
-              'message' => 'Unauthenticated',
-            
-            
-        ]);
-}
+       
         $user = User::find($request->id);
         if($user!==null && $user->is_admin!==1)
         {

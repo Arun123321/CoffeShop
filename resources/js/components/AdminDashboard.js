@@ -71,13 +71,13 @@ pauseOnHover
                     
       <h3>Hi {sessionStorage.user} </h3>
 <div className="mt-5 text-center ">
-      <Link className="btn btn-primary mx-2" to="/CoShop/admin-users">
+      <Link className="btn btn-primary mx-2" to="/admin-users">
 Manage Users
       </Link>
-  <Link className="btn btn-primary" to="/CoShop/admin-products">
+  <Link className="btn btn-primary" to="/admin-products">
 Manage Products
       </Link>
-      <Link className="btn btn-primary mx-2" to="/CoShop/admin-orders">
+      <Link className="btn btn-primary mx-2" to="/admin-orders">
 Manage Orders
       </Link>
       </div>
