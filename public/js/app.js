@@ -5549,6 +5549,22 @@ var AddProduct = function AddProduct(props) {
       price: price,
       name: name
     };
+
+    if (description === '') {
+      setError('Enter A Description');
+      return false;
+    }
+
+    if (price === '') {
+      setError('Enter A Price');
+      return false;
+    }
+
+    if (name === '') {
+      setError('Enter A Name');
+      return false;
+    }
+
     var runApi = axios.post('public/api/createproduct', data).then(function (response) {
       setModalOpen(false);
       setError('');
@@ -7531,7 +7547,7 @@ function Header() {
                   to: "/admin-orders",
                   children: "Manage Orders"
                 })
-              }) : null, sessionStorage.isAuth === 'true' && sessionStorage.isAdmin !== '1' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
+              }) : null, sessionStorage.isAuth === 'true' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
                 className: "nav-item",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(reactstrap__WEBPACK_IMPORTED_MODULE_9__.Button, {

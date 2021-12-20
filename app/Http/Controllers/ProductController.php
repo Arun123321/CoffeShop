@@ -50,16 +50,7 @@ class ProductController extends Controller
      */
     public function create(Request $request)
     {
-        $user = Auth::guard('api')->user();
-
-if($user->is_admin!=1)
-{
-      return response()->json([
-              'message' => 'Unauthenticated',
-            
-            
-        ]);
-}
+        
         if(Product::create($request->all()))
         {
             return response()->json(['message' => 'Success']);
@@ -103,16 +94,7 @@ if($user->is_admin!=1)
      */
     public function update(Request $request)
     {
-        $user = Auth::guard('api')->user();
-
-if($user->is_admin!=1)
-{
-      return response()->json([
-              'message' => 'Unauthenticated',
-            
-            
-        ]);
-}
+       
         $product = Product::find($request->id);
          $validator = Validator::make($request->all(), [
             'name' => 'required|string|between:2,100',
@@ -152,16 +134,7 @@ else
      */
     public function destroy(Request $request)
     {
-        $user = Auth::guard('api')->user();
-
-if($user->is_admin!=1)
-{
-      return response()->json([
-              'message' => 'Unauthenticated',
-            
-            
-        ]);
-}
+        
         $product = Product::find($request->id);
        
         if($product->delete())

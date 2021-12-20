@@ -26,6 +26,21 @@ const handleSubmit= (e) =>{
 
 e.preventDefault();
 const data = { description: des,price:price,name:name };
+if(description==='')
+{
+  setError('Enter A Description');
+  return false;
+}
+if(price==='')
+{
+  setError('Enter A Price');
+  return false;
+}
+if(name==='')
+{
+  setError('Enter A Name');
+  return false;
+}
     const runApi=axios.post('public/api/createproduct', data)
         .then(response => {
 

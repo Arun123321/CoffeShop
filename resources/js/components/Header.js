@@ -180,7 +180,7 @@ Manage Orders
       </li>:null
      }
         {
-        sessionStorage.isAuth==='true' && sessionStorage.isAdmin!=='1' ?
+        sessionStorage.isAuth==='true'  ?
            
       <li className="nav-item">
               <div>
