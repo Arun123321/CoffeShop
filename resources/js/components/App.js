@@ -48,21 +48,21 @@ pauseOnFocusLoss
 draggable
 pauseOnHover
 />
-    <Router>
+    <Router basename="/CoShop">
       
         <Header />
         <Routes>
-          <Route exact path="/CoShop/" element={<Main/>} />
-         <Route exact path="/CoShop/login/" element={<Login/>} />
-          <Route path="/CoShop/dashboard/" element={<Dashboard/>} />
-          <Route path="/CoShop/admin-users/" element={<Admin/>} />
-           <Route path="/CoShop/admin-products/" element={<Product/>} />
-   <Route exact path="/CoShop/register" element={<Register/>} />
-           <Route exact path="/CoShop/admin" element={<AdminDashboard/>} />
-           <Route exact path="/CoShop/wallet" element={<Wallet/>} />
-           <Route exact path="/CoShop/checkout" element={<Checkout/>} />
-           <Route exact path="/CoShop/admin-orders" element={<AdminOrders/>} />
-           <Route exact path="/CoShop/my-orders" element={<MyOrders/>} />
+          <Route exact path="/" element={<Main/>} />
+         <Route  path="login/" element={<Login/>} />
+          <Route path="/dashboard/" element={<Dashboard/>} />
+          <Route path="/admin-users/" element={<Admin/>} />
+           <Route path="/admin-products/" element={<Product/>} />
+   <Route exact path="/register/" element={<Register/>} />
+           <Route exact path="/admin" element={<AdminDashboard/>} />
+           <Route exact path="/wallet" element={<Wallet/>} />
+           <Route exact path="/checkout" element={<Checkout/>} />
+           <Route exact path="/admin-orders" element={<AdminOrders/>} />
+           <Route exact path="/my-orders" element={<MyOrders/>} />
         </Routes>
     
     
@@ -80,7 +80,7 @@ const [products, setProducts] = useState(null);
 function addTocart(id,e) {
 e.target.innerHTML='Adding';
   const data = { id: id,quantity:1 };
-    const runApi=axios.post('/CoShop/public/api/cart/add', data,{headers: {
+    const runApi=axios.post('public/api/cart/add', data,{headers: {
     'Authorization': 'Bearer '+sessionStorage.accesstoken 
   }})
         .then(response => {
@@ -117,7 +117,7 @@ useEffect(() => {
     
 
 
- axios.get('/CoShop/api/getproducts')
+ axios.get('public/api/getproducts')
         .then(response => {
 
     setProducts(response.data.data);

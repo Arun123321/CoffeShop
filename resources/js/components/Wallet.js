@@ -62,7 +62,7 @@ return ( <div className="row justify-content-center">
 useEffect(() => {
     
 
- axios.get('/CoShop/public/api/getwalletbalance', {headers: {
+ axios.get('public/api/getwalletbalance', {headers: {
     'Authorization': 'Bearer '+sessionStorage.accesstoken 
   }})
         .then(response => {

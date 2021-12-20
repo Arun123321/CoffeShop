@@ -17,7 +17,7 @@ use App\Models\DeliveryMethod;
 class OrderController extends Controller
 {
 
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -25,6 +25,7 @@ class OrderController extends Controller
      */
     public function index()
     {
+       
        $orders = Order::all();
   return response()->json(['message' => 'Success','data'=>$orders]);
     }
@@ -115,7 +116,18 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function changestatus(Request $request)
-    {
+    {    $user = Auth::guard('api')->user();
+
+if($user->is_admin!=1)
+{
+      return response()->json([
+              'message' => 'Unauthenticated',
+            
+            
+        ]);
+}
+
+
         $order = Order::find($request->id);
         $message='Order Cancelled';
 
@@ -225,6 +237,16 @@ if($request->status==3 && $order->payment=='Wallet')
      */
     public function destroy($id)
     {
+        $user = Auth::guard('api')->user();
+
+if($user->is_admin!=1)
+{
+      return response()->json([
+              'message' => 'Unauthenticated',
+            
+            
+        ]);
+}
           $order = Order::find($id);
 
         if($order->delete())

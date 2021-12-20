@@ -12,7 +12,7 @@ const handleSubmit= (e) =>{
 
 e.preventDefault();
 const data = { email: email,password:password };
-    axios.post('/CoShop/api/login', data)
+    axios.post('public/api/login', data)
         .then(response => {
 
     sessionStorage.setItem('accesstoken',response.data.access_token);
@@ -22,11 +22,11 @@ const data = { email: email,password:password };
     setError('');
     if(response.data.user.is_admin==1)
     {
-       history("/CoShop/admin"); 
+       history("/admin"); 
     }
     else
     {
-    history("/CoShop"); 
+    history("/"); 
 
   }
 

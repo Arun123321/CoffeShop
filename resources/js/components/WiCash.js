@@ -27,7 +27,7 @@ const handleSubmit= (e) =>{
 e.preventDefault();
 console.log(cash);
 const data = { balance: cash };
-    const runApi=axios.post('/CoShop/public/api/withdraw', data, {
+    const runApi=axios.post('public/api/withdraw', data, {
   headers: {
     'Authorization': 'Bearer '+sessionStorage.accesstoken 
   }

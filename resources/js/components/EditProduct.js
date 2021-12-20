@@ -26,7 +26,7 @@ const handleSubmit= (e) =>{
 
 e.preventDefault();
 const data = { id:props.id,description: des,price:price,name:name  };
-   const runApi= axios.post('/CoShop/api/updateproduct', data)
+   const runApi= axios.post('public/api/updateproduct', data)
         .then(response => {
 
     setEdit(false);
@@ -63,7 +63,7 @@ useEffect(() => {
     
 if(props.id!==null)
 {
- axios.get('/CoShop/api/getproduct/'+props.id)
+ axios.get('public/api/getproduct/'+props.id)
         .then(response => {
 
 console.log(response.data.data);

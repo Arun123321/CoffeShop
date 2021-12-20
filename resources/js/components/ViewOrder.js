@@ -25,7 +25,7 @@ const handleSubmit= (e) =>{
 
 e.preventDefault();
 const data = { email: email,password:password,name:name };
-    axios.post('/CoShop/api/register', data)
+    axios.post('public/api/register', data)
         .then(response => {
 
     setModalOpen(false);
@@ -46,7 +46,7 @@ useEffect(() => {
     
 
 
- axios.get('/CoShop/api/getorder/'+orderid)
+ axios.get('public/api/getorder/'+orderid)
         .then(response => {
 
     setOrders(response.data.data);

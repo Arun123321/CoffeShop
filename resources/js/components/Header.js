@@ -18,7 +18,7 @@ useEffect(() => {
     
 
 
- axios.get('/CoShop/api/cart/',{headers: {
+ axios.get('public/api/cart/',{headers: {
     'Authorization': 'Bearer '+sessionStorage.accesstoken 
   }})
         .then(response => {
@@ -38,7 +38,7 @@ function removecart(id,e)
 
 e.target.innerHTML='Removing';
   
-    const runApi=axios.delete('/CoShop/api/cart/remove/'+id,{headers: {
+    const runApi=axios.delete('public/api/cart/remove/'+id,{headers: {
     'Authorization': 'Bearer '+sessionStorage.accesstoken 
   }})
         .then(response => {
@@ -75,7 +75,7 @@ progress: undefined,
 const logout =(e) => {
 e.preventDefault();
 sessionStorage.clear();
- history("/CoShop/login"); 
+ history("/login"); 
 }
 
 
@@ -95,19 +95,19 @@ sessionStorage.clear();
   >
     <span className="navbar-toggler-icon" />
   </button>
-    <Link className="nav-link" to="/CoShop/">
+    <Link className="nav-link" to="/">
     CoffeShop
 </Link>
   <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
       <li className="nav-item active">
 
-      <Link className="nav-link" to="/CoShop/">Home</Link>
+      <Link className="nav-link" to="/">Home</Link>
 
         
       </li> <li className="nav-item active">
 
-      <Link className="nav-link" to="/CoShop/admin">Admin</Link>
+      <Link className="nav-link" to="/admin">Admin</Link>
 
         
       </li>
@@ -115,7 +115,7 @@ sessionStorage.clear();
       {
         sessionStorage.isAuth!=='true'?
       <li className="nav-item">
-              <Link className="nav-link" to="/CoShop/login">Login</Link>
+              <Link className="nav-link" to="/login">Login</Link>
 
       </li>:<li className="nav-item">
               <a className="nav-link"   onClick={logout}>Logout</a>
@@ -125,7 +125,7 @@ sessionStorage.clear();
      {
         sessionStorage.isAuth!=='true'?
       <li className="nav-item">
-              <Link className="nav-link" to="/CoShop/register">Register</Link>
+              <Link className="nav-link" to="/register">Register</Link>
 
       </li>:null
      }
@@ -133,7 +133,7 @@ sessionStorage.clear();
     {
         sessionStorage.isAuth==='true' && sessionStorage.isAdmin==='1'?
        <li className="nav-item">
-               <Link className="nav-link" to="/CoShop/admin-users">
+               <Link className="nav-link" to="/admin-users">
 Manage Users
       </Link>
 
@@ -142,7 +142,7 @@ Manage Users
          {
         sessionStorage.isAuth==='true' && sessionStorage.isAdmin!=='1'?
        <li className="nav-item">
-               <Link className="nav-link" to="/CoShop/wallet">
+               <Link className="nav-link" to="/wallet">
 Wallet
       </Link>
 
@@ -152,7 +152,7 @@ Wallet
          {
         sessionStorage.isAuth==='true' && sessionStorage.isAdmin!=='1'?
        <li className="nav-item">
-               <Link className="nav-link" to="/CoShop/my-orders">
+               <Link className="nav-link" to="/my-orders">
 My Orders
       </Link>
 
@@ -162,7 +162,7 @@ My Orders
         sessionStorage.isAuth==='true'  && sessionStorage.isAdmin==='1'?
            
       <li className="nav-item">
-              <Link className="nav-link" to="/CoShop/admin-products">
+              <Link className="nav-link" to="/admin-products">
 Manage Products
       </Link>
 
@@ -173,7 +173,7 @@ Manage Products
         sessionStorage.isAuth==='true'  && sessionStorage.isAdmin==='1'?
            
       <li className="nav-item">
-              <Link className="nav-link" to="/CoShop/admin-orders">
+              <Link className="nav-link" to="/admin-orders">
 Manage Orders
       </Link>
 
@@ -244,7 +244,7 @@ cart.items.map((cartItem) => {
 <div className="row">
 
 
-<Link  className="btn btn-sm btn-primary" to="/CoShop/checkout">  Checkout  </Link>
+<Link  className="btn btn-sm btn-primary" to="/checkout">  Checkout  </Link>
 
 </div>
     </PopoverBody>

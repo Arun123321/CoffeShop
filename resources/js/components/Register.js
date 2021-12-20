@@ -13,7 +13,7 @@ const handleSubmit= (e) =>{
 
 e.preventDefault();
 const data = { email: email,password:password,name:name };
-    axios.post('/CoShop/api/register', data)
+    axios.post('public/api/register', data)
         .then(response => {
 
     sessionStorage.setItem('accesstoken',response.data.access_token);

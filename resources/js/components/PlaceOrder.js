@@ -42,7 +42,7 @@ if(paymentmethod===null)
   return false;
 }
 const data = { payment: paymentmethod };
-    const runApi=axios.post('/CoShop/public/api/placeorder', data, {
+    const runApi=axios.post('public/api/placeorder', data, {
   headers: {
     'Authorization': 'Bearer '+sessionStorage.accesstoken 
   }
@@ -83,7 +83,7 @@ progress: undefined,
       useEffect(() => {
     
 
- axios.get('/CoShop/public/api/getwalletbalance', {headers: {
+ axios.get('public/api/getwalletbalance', {headers: {
     'Authorization': 'Bearer '+sessionStorage.accesstoken 
   }})
         .then(response => {

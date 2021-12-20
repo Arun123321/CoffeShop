@@ -54,7 +54,7 @@ return ( <div className="row justify-content-center">
 useEffect(() => {
     
 
- axios.get('/CoShop/api/getusers')
+ axios.get('public/api/getusers')
         .then(response => {
 console.log(response.data.data);
     setUsers(response.data.data);
@@ -80,7 +80,7 @@ function deleteTrigger(id)
 {
 
 
-axios.delete('/CoShop/api/delete/'+id)
+axios.delete('public/api/delete/'+id)
         .then(response => {
 console.log(response.data.data);
 toast.error('Deleted', {

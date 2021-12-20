@@ -5405,7 +5405,7 @@ var AddCash = function AddCash(props) {
     var data = {
       balance: cash
     };
-    var runApi = axios.post('/CoShop/public/api/addtowallet', data, {
+    var runApi = axios.post('public/api/addtowallet', data, {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.accesstoken
       }
@@ -5549,7 +5549,7 @@ var AddProduct = function AddProduct(props) {
       price: price,
       name: name
     };
-    var runApi = axios.post('/CoShop/api/createproduct', data).then(function (response) {
+    var runApi = axios.post('public/api/createproduct', data).then(function (response) {
       setModalOpen(false);
       setError('');
       react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast.success('Added', {
@@ -5720,7 +5720,7 @@ var AddUser = function AddUser(props) {
       password: password,
       name: name
     };
-    var runApi = axios.post('/CoShop/api/register', data).then(function (response) {
+    var runApi = axios.post('public/api/register', data).then(function (response) {
       setModalOpen(false);
       setError('');
       react_toastify__WEBPACK_IMPORTED_MODULE_2__.toast.success('Added', {
@@ -5931,7 +5931,7 @@ function Admin() {
     };
 
     var deleteTrigger = function deleteTrigger(id) {
-      axios["delete"]('/CoShop/api/delete/' + id).then(function (response) {
+      axios["delete"]('public/api/delete/' + id).then(function (response) {
         console.log(response.data.data);
         react_toastify__WEBPACK_IMPORTED_MODULE_5__.toast.error('Deleted', {
           position: "top-right",
@@ -5959,7 +5959,7 @@ function Admin() {
     };
 
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-      axios.get('/CoShop/api/getusers').then(function (response) {
+      axios.get('public/api/getusers').then(function (response) {
         console.log(response.data.data);
         setUsers(response.data.data);
       })["catch"](function (error) {
@@ -6124,7 +6124,7 @@ function AdminDashboard() {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
           children: " username -   arunpajith123@gmail.com"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
-          children: " password - 123456"
+          children: " password - 1234"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Login__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
       })
     });
@@ -6291,7 +6291,7 @@ function AdminOrders() {
         status: status,
         id: id
       };
-      var runApi = axios.post('/CoShop/api/changestatus', data, {
+      var runApi = axios.post('public/api/changestatus', data, {
         headers: {
           'Authorization': 'Bearer ' + sessionStorage.accesstoken
         }
@@ -6326,7 +6326,7 @@ function AdminOrders() {
     };
 
     var deleteTrigger = function deleteTrigger(id) {
-      axios["delete"]('/CoShop/api/deleteorder/' + id).then(function (response) {
+      axios["delete"]('public/api/deleteorder/' + id).then(function (response) {
         console.log(response.data.data);
         react_toastify__WEBPACK_IMPORTED_MODULE_5__.toast.error('Deleted', {
           position: "top-right",
@@ -6354,7 +6354,7 @@ function AdminOrders() {
     };
 
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-      axios.get('/CoShop/api/getorders').then(function (response) {
+      axios.get('public/api/getorders').then(function (response) {
         console.log(response.data.data);
         setOrders(response.data.data);
       })["catch"](function (error) {
@@ -6584,47 +6584,47 @@ function App() {
       draggable: true,
       pauseOnHover: true
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.BrowserRouter, {
+      basename: "/CoShop",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Routes, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
           exact: true,
-          path: "/CoShop/",
+          path: "/",
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(Main, {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
-          exact: true,
-          path: "/CoShop/login/",
+          path: "login/",
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Login__WEBPACK_IMPORTED_MODULE_3__["default"], {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
-          path: "/CoShop/dashboard/",
+          path: "/dashboard/",
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Dashboard__WEBPACK_IMPORTED_MODULE_4__["default"], {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
-          path: "/CoShop/admin-users/",
+          path: "/admin-users/",
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Admin__WEBPACK_IMPORTED_MODULE_5__["default"], {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
-          path: "/CoShop/admin-products/",
+          path: "/admin-products/",
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Product__WEBPACK_IMPORTED_MODULE_6__["default"], {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
           exact: true,
-          path: "/CoShop/register",
+          path: "/register/",
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Register__WEBPACK_IMPORTED_MODULE_7__["default"], {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
           exact: true,
-          path: "/CoShop/admin",
+          path: "/admin",
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_AdminDashboard__WEBPACK_IMPORTED_MODULE_10__["default"], {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
           exact: true,
-          path: "/CoShop/wallet",
+          path: "/wallet",
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Wallet__WEBPACK_IMPORTED_MODULE_8__["default"], {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
           exact: true,
-          path: "/CoShop/checkout",
+          path: "/checkout",
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Checkout__WEBPACK_IMPORTED_MODULE_9__["default"], {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
           exact: true,
-          path: "/CoShop/admin-orders",
+          path: "/admin-orders",
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_AdminOrders__WEBPACK_IMPORTED_MODULE_11__["default"], {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
           exact: true,
-          path: "/CoShop/my-orders",
+          path: "/my-orders",
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_MyOrders__WEBPACK_IMPORTED_MODULE_12__["default"], {})
         })]
       })]
@@ -6648,7 +6648,7 @@ function Main() {
       id: id,
       quantity: 1
     };
-    var runApi = axios.post('/CoShop/public/api/cart/add', data, {
+    var runApi = axios.post('public/api/cart/add', data, {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.accesstoken
       }
@@ -6679,7 +6679,7 @@ function Main() {
   }
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios.get('/CoShop/api/getproducts').then(function (response) {
+    axios.get('public/api/getproducts').then(function (response) {
       setProducts(response.data.data);
     })["catch"](function (error) {});
   }, []);
@@ -6818,7 +6818,7 @@ function Checkout() {
   } else {
     var removecart = function removecart(id, e) {
       e.target.innerHTML = 'Removing';
-      var runApi = axios["delete"]('/CoShop/public/api/cart/remove/' + id, {
+      var runApi = axios["delete"]('public/api/cart/remove/' + id, {
         headers: {
           'Authorization': 'Bearer ' + sessionStorage.accesstoken
         }
@@ -6958,7 +6958,7 @@ function Dashboard() {
   if (sessionStorage.isAuth !== 'true') {
     //history("/CoShop/login"); 
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Navigate, {
-      to: "/CoShop/login"
+      to: "/login"
     });
   } else {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -7053,7 +7053,7 @@ var EditProduct = function EditProduct(props) {
       price: price,
       name: name
     };
-    var runApi = axios.post('/CoShop/api/updateproduct', data).then(function (response) {
+    var runApi = axios.post('public/api/updateproduct', data).then(function (response) {
       setEdit(false);
       setError('');
       react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('updated', {
@@ -7082,7 +7082,7 @@ var EditProduct = function EditProduct(props) {
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (props.id !== null) {
-      axios.get('/CoShop/api/getproduct/' + props.id).then(function (response) {
+      axios.get('public/api/getproduct/' + props.id).then(function (response) {
         console.log(response.data.data);
         setProduct(response.data.data);
       })["catch"](function (error) {
@@ -7244,7 +7244,7 @@ var EditUser = function EditUser(props) {
       email: email,
       name: name
     };
-    var runApi = axios.post('/CoShop/api/update', data).then(function (response) {
+    var runApi = axios.post('public/api/update', data).then(function (response) {
       setEdit(false);
       setError('');
       react_toastify__WEBPACK_IMPORTED_MODULE_1__.toast.success('updated', {
@@ -7273,7 +7273,7 @@ var EditUser = function EditUser(props) {
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (props.id !== null) {
-      axios.get('/CoShop/api/getuser/' + props.id).then(function (response) {
+      axios.get('public/api/getuser/' + props.id).then(function (response) {
         console.log(response.data.data);
         setUser(response.data.data);
       })["catch"](function (error) {
@@ -7387,7 +7387,7 @@ function Header() {
       setCart = _useContext.setCart;
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios.get('/CoShop/api/cart/', {
+    axios.get('public/api/cart/', {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.accesstoken
       }
@@ -7398,7 +7398,7 @@ function Header() {
 
   function removecart(id, e) {
     e.target.innerHTML = 'Removing';
-    var runApi = axios["delete"]('/CoShop/api/cart/remove/' + id, {
+    var runApi = axios["delete"]('public/api/cart/remove/' + id, {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.accesstoken
       }
@@ -7431,7 +7431,7 @@ function Header() {
   var logout = function logout(e) {
     e.preventDefault();
     sessionStorage.clear();
-    history("/CoShop/login");
+    history("/login");
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
@@ -7454,7 +7454,7 @@ function Header() {
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
             className: "nav-link",
-            to: "/CoShop/",
+            to: "/",
             children: "CoffeShop"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "collapse navbar-collapse",
@@ -7465,21 +7465,21 @@ function Header() {
                 className: "nav-item active",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
                   className: "nav-link",
-                  to: "/CoShop/",
+                  to: "/",
                   children: "Home"
                 })
               }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
                 className: "nav-item active",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
                   className: "nav-link",
-                  to: "/CoShop/admin",
+                  to: "/admin",
                   children: "Admin"
                 })
               }), sessionStorage.isAuth !== 'true' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
                 className: "nav-item",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
                   className: "nav-link",
-                  to: "/CoShop/login",
+                  to: "/login",
                   children: "Login"
                 })
               }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
@@ -7493,42 +7493,42 @@ function Header() {
                 className: "nav-item",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
                   className: "nav-link",
-                  to: "/CoShop/register",
+                  to: "/register",
                   children: "Register"
                 })
               }) : null, sessionStorage.isAuth === 'true' && sessionStorage.isAdmin === '1' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
                 className: "nav-item",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
                   className: "nav-link",
-                  to: "/CoShop/admin-users",
+                  to: "/admin-users",
                   children: "Manage Users"
                 })
               }) : null, sessionStorage.isAuth === 'true' && sessionStorage.isAdmin !== '1' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
                 className: "nav-item",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
                   className: "nav-link",
-                  to: "/CoShop/wallet",
+                  to: "/wallet",
                   children: "Wallet"
                 })
               }) : null, sessionStorage.isAuth === 'true' && sessionStorage.isAdmin !== '1' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
                 className: "nav-item",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
                   className: "nav-link",
-                  to: "/CoShop/my-orders",
+                  to: "/my-orders",
                   children: "My Orders"
                 })
               }) : null, sessionStorage.isAuth === 'true' && sessionStorage.isAdmin === '1' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
                 className: "nav-item",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
                   className: "nav-link",
-                  to: "/CoShop/admin-products",
+                  to: "/admin-products",
                   children: "Manage Products"
                 })
               }) : null, sessionStorage.isAuth === 'true' && sessionStorage.isAdmin === '1' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
                 className: "nav-item",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
                   className: "nav-link",
-                  to: "/CoShop/admin-orders",
+                  to: "/admin-orders",
                   children: "Manage Orders"
                 })
               }) : null, sessionStorage.isAuth === 'true' && sessionStorage.isAdmin !== '1' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
@@ -7598,7 +7598,7 @@ function Header() {
                         className: "row",
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
                           className: "btn btn-sm btn-primary",
-                          to: "/CoShop/checkout",
+                          to: "/checkout",
                           children: "  Checkout  "
                         })
                       })]
@@ -7687,7 +7687,7 @@ function Login() {
       email: email,
       password: password
     };
-    axios.post('/CoShop/api/login', data).then(function (response) {
+    axios.post('public/api/login', data).then(function (response) {
       sessionStorage.setItem('accesstoken', response.data.access_token);
       sessionStorage.setItem('isAuth', 'true');
       sessionStorage.setItem('isAdmin', response.data.user.is_admin);
@@ -7695,9 +7695,9 @@ function Login() {
       setError('');
 
       if (response.data.user.is_admin == 1) {
-        history("/CoShop/admin");
+        history("/admin");
       } else {
-        history("/CoShop");
+        history("/");
       }
     })["catch"](function (error) {
       setError('Invalid Credentials');
@@ -7876,7 +7876,7 @@ function MyOrders() {
         status: status,
         id: id
       };
-      var runApi = axios.post('/CoShop/public/api/changestatusself', data, {
+      var runApi = axios.post('public/api/changestatusself', data, {
         headers: {
           'Authorization': 'Bearer ' + sessionStorage.accesstoken
         }
@@ -7911,7 +7911,7 @@ function MyOrders() {
     };
 
     var deleteTrigger = function deleteTrigger(id) {
-      axios["delete"]('/CoShop/api/deleteorder/' + id).then(function (response) {
+      axios["delete"]('public/api/deleteorder/' + id).then(function (response) {
         console.log(response.data.data);
         react_toastify__WEBPACK_IMPORTED_MODULE_5__.toast.error('Deleted', {
           position: "top-right",
@@ -7939,7 +7939,7 @@ function MyOrders() {
     };
 
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-      axios.get('/CoShop/public/api/getmyorders', {
+      axios.get('public/api/getmyorders', {
         headers: {
           'Authorization': 'Bearer ' + sessionStorage.accesstoken
         }
@@ -8009,6 +8009,7 @@ function MyOrders() {
                         return changeStatus(3, order.id);
                       },
                       className: "mx-2",
+                      disabled: order.status === 'Canceled' ? 'disabled' : null,
                       children: "Cancel"
                     })]
                   })]
@@ -8120,7 +8121,7 @@ var PlaceOrder = function PlaceOrder(props) {
     var data = {
       payment: paymentmethod
     };
-    var runApi = axios.post('/CoShop/public/api/placeorder', data, {
+    var runApi = axios.post('public/api/placeorder', data, {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.accesstoken
       }
@@ -8153,7 +8154,7 @@ var PlaceOrder = function PlaceOrder(props) {
   };
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios.get('/CoShop/public/api/getwalletbalance', {
+    axios.get('public/api/getwalletbalance', {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.accesstoken
       }
@@ -8353,7 +8354,7 @@ function Product() {
     };
 
     var deleteTrigger = function deleteTrigger(id) {
-      axios["delete"]('/CoShop/api/deleteproduct/' + id).then(function (response) {
+      axios["delete"]('public/api/deleteproduct/' + id).then(function (response) {
         console.log(response.data.data);
         react_toastify__WEBPACK_IMPORTED_MODULE_5__.toast.error('Deleted', {
           position: "top-right",
@@ -8381,7 +8382,7 @@ function Product() {
     };
 
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-      axios.get('/CoShop/api/getproducts').then(function (response) {
+      axios.get('public/api/getproducts').then(function (response) {
         console.log(response.data.data);
         setProducts(response.data.data);
       })["catch"](function (error) {
@@ -8534,7 +8535,7 @@ function Register() {
       password: password,
       name: name
     };
-    axios.post('/CoShop/api/register', data).then(function (response) {
+    axios.post('public/api/register', data).then(function (response) {
       sessionStorage.setItem('accesstoken', response.data.access_token);
       sessionStorage.setItem('isAuth', 'true');
       sessionStorage.setItem('isAdmin', response.data.user.is_admin);
@@ -8689,7 +8690,7 @@ var ViewOrder = function ViewOrder(props) {
       password: password,
       name: name
     };
-    axios.post('/CoShop/api/register', data).then(function (response) {
+    axios.post('public/api/register', data).then(function (response) {
       setModalOpen(false);
       setError('');
     })["catch"](function (error) {
@@ -8699,7 +8700,7 @@ var ViewOrder = function ViewOrder(props) {
   };
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios.get('/CoShop/api/getorder/' + orderid).then(function (response) {
+    axios.get('public/api/getorder/' + orderid).then(function (response) {
       setOrders(response.data.data);
     })["catch"](function (error) {});
   }, [modalOpen]);
@@ -8863,7 +8864,7 @@ var ViewOrderG = function ViewOrderG(props) {
       password: password,
       name: name
     };
-    axios.post('/CoShop/api/register', data).then(function (response) {
+    axios.post('public/api/register', data).then(function (response) {
       setModalOpen(false);
       setError('');
     })["catch"](function (error) {
@@ -8873,7 +8874,7 @@ var ViewOrderG = function ViewOrderG(props) {
   };
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    axios.get('/CoShop/api/getorder/' + orderid).then(function (response) {
+    axios.get('public/api/getorder/' + orderid).then(function (response) {
       setOrders(response.data.data);
     })["catch"](function (error) {});
   }, [modalOpen]);
@@ -9087,7 +9088,7 @@ function Wallet() {
     });
   } else {
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-      axios.get('/CoShop/public/api/getwalletbalance', {
+      axios.get('public/api/getwalletbalance', {
         headers: {
           'Authorization': 'Bearer ' + sessionStorage.accesstoken
         }
@@ -9220,7 +9221,7 @@ var WiCash = function WiCash(props) {
     var data = {
       balance: cash
     };
-    var runApi = axios.post('/CoShop/public/api/withdraw', data, {
+    var runApi = axios.post('public/api/withdraw', data, {
       headers: {
         'Authorization': 'Bearer ' + sessionStorage.accesstoken
       }

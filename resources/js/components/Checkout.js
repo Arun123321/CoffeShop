@@ -52,7 +52,7 @@ function removecart(id,e)
 
 e.target.innerHTML='Removing';
   
-    const runApi=axios.delete('/CoShop/public/api/cart/remove/'+id,{headers: {
+    const runApi=axios.delete('public/api/cart/remove/'+id,{headers: {
     'Authorization': 'Bearer '+sessionStorage.accesstoken 
   }})
         .then(response => {

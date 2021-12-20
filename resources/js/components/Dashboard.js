@@ -10,7 +10,7 @@ function Dashboard() {
   if (sessionStorage.isAuth!=='true') {
 
 //history("/CoShop/login"); 
-return (<Navigate to='/CoShop/login'/>)
+return (<Navigate to='/login'/>)
  } 
   else
 

@@ -26,7 +26,7 @@ const handleSubmit= (e) =>{
 
 e.preventDefault();
 const data = { email: email,password:password,name:name };
-    const runApi=axios.post('/CoShop/api/register', data)
+    const runApi=axios.post('public/api/register', data)
         .then(response => {
 
     setModalOpen(false);

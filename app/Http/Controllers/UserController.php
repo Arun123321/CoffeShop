@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Validator;
@@ -15,6 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
+       
         $users = User::all();
   return response()->json(['message' => 'Success','data'=>$users]);
     }
@@ -71,6 +72,7 @@ class UserController extends Controller
      */
     public function update(Request $request)
     {
+
         $user = User::find($request->id);
          $validator = Validator::make($request->all(), [
             'name' => 'required|string|between:2,100',
@@ -109,6 +111,16 @@ else
      */
     public function destroy(Request $request)
     {
+        $user = Auth::guard('api')->user();
+
+if($user->is_admin!=1)
+{
+      return response()->json([
+              'message' => 'Unauthenticated',
+            
+            
+        ]);
+}
         $user = User::find($request->id);
         if($user!==null && $user->is_admin!==1)
         {

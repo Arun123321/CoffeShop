@@ -56,7 +56,7 @@ return ( <div className="row justify-content-center">
 useEffect(() => {
     
 
- axios.get('/CoShop/api/getorders')
+ axios.get('public/api/getorders')
         .then(response => {
 console.log(response.data.data);
     setOrders(response.data.data);
@@ -74,7 +74,7 @@ function changeStatus(status,id)
 
   
   const data={status:status,id:id}
- const runApi=axios.post('/CoShop/api/changestatus',data,{headers: {
+ const runApi=axios.post('public/api/changestatus',data,{headers: {
     'Authorization': 'Bearer '+sessionStorage.accesstoken 
   }})
         .then(response => {
@@ -119,7 +119,7 @@ function deleteTrigger(id)
 {
 
 
-axios.delete('/CoShop/api/deleteorder/'+id)
+axios.delete('public/api/deleteorder/'+id)
         .then(response => {
 console.log(response.data.data);
 toast.error('Deleted', {

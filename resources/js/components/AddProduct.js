@@ -26,7 +26,7 @@ const handleSubmit= (e) =>{
 
 e.preventDefault();
 const data = { description: des,price:price,name:name };
-    const runApi=axios.post('/CoShop/api/createproduct', data)
+    const runApi=axios.post('public/api/createproduct', data)
         .then(response => {
 
     setModalOpen(false);

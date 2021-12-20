@@ -26,7 +26,7 @@ const handleSubmit= (e) =>{
 
 e.preventDefault();
 const data = { id:props.id,email: email,name:name };
-   const runApi= axios.post('/CoShop/api/update', data)
+   const runApi= axios.post('public/api/update', data)
         .then(response => {
 
     setEdit(false);
@@ -63,7 +63,7 @@ useEffect(() => {
     
 if(props.id!==null)
 {
- axios.get('/CoShop/api/getuser/'+props.id)
+ axios.get('public/api/getuser/'+props.id)
         .then(response => {
 
 console.log(response.data.data);

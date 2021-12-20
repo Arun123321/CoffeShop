@@ -56,7 +56,7 @@ return ( <div className="row justify-content-center">
 useEffect(() => {
     
 
- axios.get('/CoShop/public/api/getmyorders',{headers: {
+ axios.get('public/api/getmyorders',{headers: {
     'Authorization': 'Bearer '+sessionStorage.accesstoken 
   }})
         .then(response => {
@@ -76,7 +76,7 @@ function changeStatus(status,id)
 
   
   const data={status:status,id:id}
- const runApi=axios.post('/CoShop/public/api/changestatusself',data,{headers: {
+ const runApi=axios.post('public/api/changestatusself',data,{headers: {
     'Authorization': 'Bearer '+sessionStorage.accesstoken 
   }})
         .then(response => {
@@ -121,7 +121,7 @@ function deleteTrigger(id)
 {
 
 
-axios.delete('/CoShop/api/deleteorder/'+id)
+axios.delete('public/api/deleteorder/'+id)
         .then(response => {
 console.log(response.data.data);
 toast.error('Deleted', {
@@ -213,7 +213,7 @@ orders.map((order) => {
                   color="danger"
                   size="sm"
                   onClick={(e)=>changeStatus(3,order.id)}
-                  className='mx-2'
+                  className='mx-2' disabled={order.status==='Canceled'?'disabled':null}
                 >
                   Cancel
                 </Button>

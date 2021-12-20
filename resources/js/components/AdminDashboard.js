@@ -30,7 +30,7 @@ return ( <div className="row justify-content-center">
 
          <p> username -   arunpajith123@gmail.com</p>
 
-         <p> password - 123456</p>
+         <p> password - 1234</p>
 <Login/>
                 </div>
             </div>)
