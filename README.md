@@ -13,19 +13,29 @@ CoffeShop is a web application developed using Laravel + React JS
 
 ##Steps to install
 
-1.Copy the files to your web root folder
+1.Copy the files to your web root folder  
+ 
+ 1.1 Run **sudo chown -R $USER:www-data storage** then Run **chmod -R 775 storage**  For setting permission for writing & reading by www-data
+ 
 
-2.Run 'composer install --ignore-platform-reqs'
+
+2.Run **composer install  --ignore-platform-reqs**
 
 
-3.Run 'npm install'
+3.Run **npm install**
 
-4.create your database & update env file with all details
+4.create your database & update .env file with all details
 
-5.Run 'php artisan migrate'
+5. Run **php artisan key:generate**
 
-6.Run  'php artisan db:seed --class=UsersSeeder'
+6.Run **php artisan migrate**
 
+7.Run  **php artisan db:seed --class=UserSeeder**
+
+8. Open file in /resources/js/App.js   & modify line with  **<Router basename="/CoShop">** Change 'basename' to your laravel root folder(project folder)
+    
+    
+             ** Done**
 
 
 
