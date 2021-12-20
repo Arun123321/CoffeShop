@@ -78,6 +78,20 @@ const [products, setProducts] = useState(null);
 
 
 function addTocart(id,e) {
+
+  if(sessionStorage.isAuth!=='true')
+  {
+     toast.error('Please Login ', {
+position: "top-right",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: true,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+});
+return false;
+  }
 e.target.innerHTML='Adding';
   const data = { id: id,quantity:1 };
     const runApi=axios.post('public/api/cart/add', data,{headers: {

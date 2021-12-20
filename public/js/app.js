@@ -6659,6 +6659,19 @@ function Main() {
       setCart = _useContext.setCart;
 
   function addTocart(id, e) {
+    if (sessionStorage.isAuth !== 'true') {
+      react_toastify__WEBPACK_IMPORTED_MODULE_14__.toast.error('Please Login ', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      });
+      return false;
+    }
+
     e.target.innerHTML = 'Adding';
     var data = {
       id: id,
